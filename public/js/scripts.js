@@ -1,3 +1,4 @@
+
 const hamburgerBtn = document.querySelector(".hamburger-btn");
 const navMenu = document.querySelector(".flexboxUl");
 const closeBtn = document.querySelector(".close-btn");
