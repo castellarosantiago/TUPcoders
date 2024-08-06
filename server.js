@@ -3,7 +3,7 @@ const express = require('express');
 // Creamos una instancia de una aplicación Express
 const app = express();
 // Definimos el puerto en el que nuestro servidor escuchará
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Servimos archivos estáticos desde la carpeta 'public'
 app.use(express.static('public'));
