@@ -214,7 +214,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hamburger-btn, .close-btn {
-  width: 40px;
+  width: 20px;
   display: none;
 }
 
@@ -227,9 +227,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ESTILOS DEL FORM */
 
-form {
+#form {
   color: var(--white);
-  padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -242,7 +241,9 @@ form button {
 .form-section {
   display: flex;
   justify-content: space-between;
-  max-width: 1140px;
+  gap: 20px;
+  min-width: 900px;
+  margin: 0 auto;
 }
 
 .contact-section {
@@ -250,6 +251,17 @@ form button {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  min-width: 100%;
+  padding: 40px;
+}
+
+.contact-section .heading-style {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.contact-section h2 {
+  padding-top: 0;
 }
 
 .contact-section p {
@@ -355,6 +367,11 @@ padding-bottom: 20px;
   font-size: 15px;
 }
 
+.contacto a {
+  color: var(--white);
+  text-decoration: none;
+}
+
 /*REDES BUTTONS (lo internetié)*/
 .redes img {
   cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
@@ -363,6 +380,7 @@ padding-bottom: 20px;
       transform: scale(1.1); /* Agranda la imagen un poco */
       background-color: var(--white); /*esto es míoooo y funcionó*/
   }
+  max-width: 60px;
 }
 
 .redes {
@@ -431,6 +449,12 @@ padding-bottom: 20px;
   font-size: 15px;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
 
 /* ESTILOS PARA CELULAR  */
 
@@ -455,12 +479,16 @@ padding-bottom: 20px;
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
-    background-color: var(--blue);
     top: 80px;
     right: 0;
-    padding-right: 20px;
-    padding-left: 20%;
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-left: 40%;
     min-height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
   }
 
   .navbar .flexboxUl a {
@@ -468,6 +496,69 @@ padding-bottom: 20px;
     font-size: 16px;
     font-weight: 700;
   }
+
+  .form-section {
+    flex-direction: column;
+    max-width: 320px;
+    min-width: 0;
+  }
+
+  iframe {
+    max-width: 320px;
+  }
+
+  .team-cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .plataformasLogos {
+    flex-direction: column;
+  }
+
+  .heading-style {
+    font-size: 40px;
+  }
+  .contact-section, .team-section {
+    padding: 20px;
+  }
+
+  .team-section header {
+    padding-bottom: 20px;
+  }
+  .team-cards-container {
+    padding-bottom: 20px;
+  }
+  .hero-section p {
+    text-align: center;
+  }
+
+  .form-section {
+    flex-direction: column;
+    
+  }
+
+  .form-container {
+    width: 100%;
+  }
+
+  .pie {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacto h4, .contacto a {
+    text-align: center;
+  }
+
+.masonry-container {
+  flex-direction: column;
+}
+
 }
 
 /* ESTILOS PARA TABLET */
@@ -493,10 +584,10 @@ padding-bottom: 20px;
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
-    background-color: var(--blue);
-    top: 80px;
+    top: 0;
+    padding-top: 20px;
     right: 0;
-    padding-right: 20px;
+    padding-right: 40px;
     padding-left: 20%;
     min-height: 100vh;
   }
@@ -575,4 +666,79 @@ padding-bottom: 20px;
 .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.03);
+}
+
+input{
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  color: white; /* Para que el texto sea visible */
+  padding: 10px;
+  border-radius: 4px; /* Opcional: para bordes redondeados */
+  transition: border-color 0.4s, box-shadow 0.4s; /* Para transiciones suaves */
+}
+
+textarea {
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  color: white; /* Para que el texto sea visible */
+  padding: 10px;
+  border-radius: 4px; /* Opcional: para bordes redondeados */
+  transition: border-color 0.4s, box-shadow 0.4s; /* Para transiciones suaves */
+}
+
+textarea:hover {
+  border-color: #ffffff; /* Color del borde al hacer hover */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6); /* Sombra al hacer hover */
+}
+
+input:hover {
+  border-color: #ffffff; /* Color del borde al hacer hover */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6); /* Sombra al hacer hover */
+}
+
+.input-container::before,
+.input-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  
+  transition: 0.4s;
+}
+
+.input-container::before {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.input-container::after {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.input-container:hover::before {
+  left: 0;
+}
+
+.input-container:hover::after {
+  left: 0;
+}
+
+input, textarea {
+  min-width: 100%;
+}
+
+textarea {
+  font-family: var(--font-family);
+}
+
+form {
+   padding-top: 20px;
+}
+
+form .button-6 {
+  max-height: 2rem;
+  min-height: 2.5rem;
 }
