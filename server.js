@@ -34,7 +34,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/message', (req, res) => {
-  res.json({ message: '¡Hola desde private! Saludos, Ian, Paula, y Caste' });
+  res.json({ message: '¡Hola desde la API! Saludos, Ian, Paula, y Caste' });
 });
 
 app.post('/api/contact', async (req, res) => {
